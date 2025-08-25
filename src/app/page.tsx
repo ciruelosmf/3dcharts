@@ -10,7 +10,21 @@ import axios from 'axios';
 // We define the shape of our data for TypeScript to help us avoid errors.
 
 // The raw data format from the Binance API
-type BinanceRawCandle = [number, string, string, string, string, ...any[]];
+// New, correct type
+type BinanceRawCandle = [
+  number,   // 0: Open time
+  string,   // 1: Open price
+  string,   // 2: High price
+  string,   // 3: Low price
+  string,   // 4: Close price
+  string,   // 5: Volume
+  number,   // 6: Close time
+  string,   // 7: Quote asset volume
+  number,   // 8: Number of trades
+  string,   // 9: Taker buy base asset volume
+  string,   // 10: Taker buy quote asset volume
+  string    // 11: Ignore
+];
 
 // The processed candle data we'll use in our components
 type ProcessedCandle = {
